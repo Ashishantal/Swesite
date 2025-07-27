@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parallelogram Cards</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section class="hero-section" style="background-image: url('{{ url_for('static', filename='webp/video1.gif') }}');">
+        <div class="top-left-text">
+            <p>Hello My Name is,</p>
+            <p>ASHISH ANTAL.</p>
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="#" class="nav-link">HOME</a>
+                <a href="#" class="nav-link">ABOUT ME</a>
+                <a href="#" class="nav-link">CONTACT</a>
+            </div>
+        </nav>
+        <main>
+            <div class="card-container">
+                <div class="card" style="background-image: url('{{ url_for('static', filename='images/img1.jpg') }}');"></div>
+                <div class="card" style="background-image: url('{{ url_for('static', filename='images/img2.jpg') }}');"></div>
+                <div class="card" style="background-image: url('{{ url_for('static', filename='images/img3.jpg') }}');"></div>
+            </div>
+        </main>
+    </section>
+
+    <section class="slider-section">
+        <h2>Image Slider</h2>
+        <div class="slider-content-wrapper">
+            <div class="side-text left-text">
+                <p>This is a small paragraph for the left side. You can write about your projects or skills here.</p>
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Image 1">
+                    <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="Image 2">
+                    <img src="{{ url_for('static', filename='images/img3.jpg') }}" alt="Image 3">
+                </div>
+            </div>
+            <div class="side-text right-text">
+                <p>This is another small paragraph for the right side. Add more details or a call to action.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-slider-section">
+        <h2>Video Projects</h2>
+        <div class="swiper-outer-wrapper">
+            <!-- Swiper -->
+            <div class="swiper-container video-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <video src="{{ url_for('static', filename='webp/video (1).mp4') }}" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="{{ url_for('static', filename='webp/video (2).mp4') }}" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="{{ url_for('static', filename='webp/video (3).mp4') }}" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="{{ url_for('static', filename='webp/video (4).mp4') }}" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="{{ url_for('static', filename='webp/video (5).mp4') }}" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="{{ url_for('static', filename='webp/video (6).mp4') }}" loop muted playsinline></video>
+                    </div>
+                </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
