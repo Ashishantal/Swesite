@@ -1,44 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sliderTrack = document.querySelector('.slider-track'); // Note: This element does not exist in your HTML.
-    if (sliderTrack) {
-        const prevButton = document.querySelector('.prev-button');
-        const nextButton = document.querySelector('.next-button');
-        const slides = Array.from(sliderTrack.children);
-        let currentIndex = 0;
-        let slideWidth = 0;
-
-        function calculateSlideWidth() {
-            const gap = 10; // The gap in pixels from the CSS
-            slideWidth = slides[0].offsetWidth + gap;
-        }
-
-        function updateSliderPosition() {
-            sliderTrack.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-        }
-
-        function handleNext() {
-            if (currentIndex < slides.length - 3) {
-                currentIndex++;
-                updateSliderPosition();
-            }
-        }
-
-        function handlePrev() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSliderPosition();
-            }
-        }
-
-        calculateSlideWidth();
-        nextButton.addEventListener('click', handleNext);
-        prevButton.addEventListener('click', handlePrev);
-        window.addEventListener('resize', () => {
-            calculateSlideWidth();
-            updateSliderPosition();
-        });
-    }
-
+   
     // --- Logic for the cinematic video player with thumbnails ---
     const mainVideo = document.getElementById('main-video');
     const thumbnails = document.querySelectorAll('.thumbnail');
@@ -75,6 +36,36 @@ document.addEventListener('DOMContentLoaded', function() {
             topPanel.style.width = event.clientX + skewHack + delta + 'px';
         });
     }
+
+    // --- Logic for custom reel video controls ---
+    const reelCards = document.querySelectorAll('.reel-card');
+
+    reelCards.forEach(card => {
+        const video = card.querySelector('video');
+
+        // Toggle play/pause when the card is clicked
+        card.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+
+        // Add a 'playing' class to the card when the video plays to hide the icon
+        video.addEventListener('play', () => card.classList.add('playing'));
+        // Remove the 'playing' class when the video is paused to show the icon
+    video.addEventListener('pause', () => card.classList.remove('playing'));
+    });
 });
 
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeInElements = document.querySelectorAll('.fade-in');
+  fadeInElements.forEach(element => {
+    element.classList.add('active');
+  });
+});
