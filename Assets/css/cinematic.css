@@ -12,6 +12,8 @@ body.loaded {
     text-align: center;
     background-color: #000;
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .cinematic-section h2 {
@@ -26,11 +28,22 @@ body.loaded {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 15px;
+
+      /* Add these lines */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 0;
 }
 
 .video-container video {
     width: 100%;
+    height: auto;  /* Prevents unexpected stretching */
     display: block;
+    object-fit: cover;  /* Optional, keeps it clean */
+    margin: 0;
+    padding: 0;
 }
 
 .video-thumbnails {
@@ -86,11 +99,11 @@ body.loaded {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+
+.cinematic-section,
+.video-container,
+.video-thumbnails {
+    outline: 2px solid red; /* See real bounds */
 }
 
 @media (max-width: 400px) {

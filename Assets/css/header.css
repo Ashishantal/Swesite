@@ -41,7 +41,7 @@ nav ul li a {
     object-fit: cover; /* This is the important line */
 }
 
-.video-container {
+.video-conta {
     position: relative;
     width: 100%;
     height: 100vh;
