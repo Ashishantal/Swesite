@@ -257,8 +257,8 @@ nav ul li a {
 }
 
 .text-overlay a {
-  font-size: 8rem;
-  line-height: 7rem;
+  font-size: 4vw;
+  line-height: 4vw;
   mix-blend-mode: overlay;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
@@ -289,7 +289,7 @@ nav ul li a {
   transform: translateY(-50%);
   opacity: 0;
   transition: right 0.4s ease, opacity 0.4s ease;
-  font-size: 8rem;
+  font-size: 4vw;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1005,27 +1005,4 @@ body {
 
 
 
-.card-section {
-  display: flex;
-}
 
-.card-section .card-image-container {
-  width: 60%;
-  margin: 4%;
- 
-}
-
-.card-section .card-image {
-  width: 80%;
-}
-
-.card-section .card-image img {
-  width: 80%;
-  height: auto;
-  display: block;
-  border-radius: 30px;
-}
-
-.card-section .card-text {
-  width: 50%;
-}

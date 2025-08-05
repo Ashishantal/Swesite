@@ -1,0 +1,98 @@
+.dark-section {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: right;
+  display: flex;
+}
+
+@media (max-width: 400px) {
+  .dark-section {
+    display: block;
+    text-align: center; /* Center content within the dark section */
+  }
+
+  .dark-section .container1 {
+    width: auto;
+    order: 1;
+    text-align: center;
+  }
+
+  .dark-section .container2 {
+    width: auto;
+    
+    order: 2;
+    text-align: center;
+  }
+  .social-icons{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .dark-section .container1 .social-icons {
+    justify-content: center; /* Center social icons */
+  }
+
+  .dark-section .container2 {
+    padding: 20px; /* Adjust padding for better spacing */
+  }
+}
+
+.dark-section .container1 {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  order: 2;
+}
+
+.dark-section .container1 .logo-placeholder,
+.dark-section .container1 .name,
+.dark-section .container1 .social-icons {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dark-section .container1 .social-icons {
+  justify-content: center;
+}
+
+.dark-section .container2 {
+  width: auto;
+  text-align: left;
+  padding: 40px;
+  order: 1;
+}
+
+.card-section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.dark-section .logo-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #555;
+  margin: 0 0 20px auto;
+  display: block;
+}
+
+.dark-section .name {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.dark-section .social-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.dark-section .social-icon {
+  color: white;
+  font-size: 2em;
+}
+

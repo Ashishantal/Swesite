@@ -1,0 +1,77 @@
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.slider-section {
+    padding: 50px;
+    text-align: center;
+    overflow: hidden;
+    background-color: white;
+}
+
+.slider-section h2 {
+    border: 2px solid white;
+    padding: 10px;
+    display: inline-block;
+    color: black;
+}
+
+.slider-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between text and slider */
+}
+
+.side-text {
+    flex: 1; /* Allows the text containers to take up available space */
+    padding: 0 20px;
+    text-align: justify;
+}
+
+.slider-container {
+    width: 50%; /* MANUALLY CHANGE THIS: Adjust the percentage (e.g., 80%, 60%) to make the image slider wider or narrower. */
+    margin: 0; /* Remove auto margin */
+    overflow: hidden;
+}
+
+.slider {
+    display: inline-flex;
+    animation: slide 10s infinite;
+}
+
+.slider img {
+    width: 100%;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+@media (max-width: 500px) {
+    .slider-section {
+        padding: 20px;
+    }
+
+    .slider-content-wrapper {
+        flex-direction: column;
+    }
+
+    .side-text {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+}
