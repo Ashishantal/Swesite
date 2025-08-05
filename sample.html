@@ -24,6 +24,25 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="import" href="index1.html">
+        <style>
+            .image-preview-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .image-preview {
+                max-width: 80%;
+                max-height: 80%;
+            }
+        </style>
     </head>
     <body>
     <nav>
@@ -42,15 +61,14 @@
         </div>
         <h2>Sample</h2>
         <div class="bento-grid">
-            <div class="bento-item item-1"><a href="#"><img src="Assets/images/img1.jpg" alt="Sample Image 1"></a></div>
-            <div class="bento-item item-2"><a href="#"><img src="Assets/images/img2.jpg" alt="Sample Image 2"></a></div>
-            <div class="bento-item item-3"><a href="#"><img src="Assets/images/img3.jpg" alt="Sample Image 3"></a></div>
-            <div class="bento-item item-4"><a href="#"><img src="Assets/images/img4.jpg" alt="Sample Image 4"></a></div>
-            <div class="bento-item item-5"><a href="#"><img src="Assets/images/img5.jpg" alt="Sample Image 5"></a></div>
-            <div class="bento-item item-6"><a href="#"><img src="Assets/images/img7.jpg" alt="Sample Image 6"></a></div>
-            <div class="bento-item item-7"><a href="#"><img src="Assets/images/img8.jpg" alt="Sample Image 7"></a></div>
-            <div class="bento-item item-8"><a href="#"><img src="Assets/images/img9.jpg" alt="Sample Image 8"></a></div>
-            
+            <div class="bento-item item-1"><img src="Assets/images/img1.jpg" alt="Sample Image 1" onclick="previewImage('Assets/images/img1.jpg')"></div>
+            <div class="bento-item item-2"><img src="Assets/images/img2.jpg" alt="Sample Image 2" onclick="previewImage('Assets/images/img2.jpg')"></div>
+            <div class="bento-item item-3"><img src="Assets/images/img3.jpg" alt="Sample Image 3" onclick="previewImage('Assets/images/img3.jpg')"></div>
+            <div class="bento-item item-4"><img src="Assets/images/img4.jpg" alt="Sample Image 4" onclick="previewImage('Assets/images/img4.jpg')"></div>
+            <div class="bento-item item-5"><img src="Assets/images/img5.jpg" alt="Sample Image 5" onclick="previewImage('Assets/images/img5.jpg')"></div>
+            <div class="bento-item item-6"><img src="Assets/images/img7.jpg" alt="Sample Image 6" onclick="previewImage('Assets/images/img7.jpg')"></div>
+            <div class="bento-item item-7"><img src="Assets/images/img8.jpg" alt="Sample Image 7" onclick="previewImage('Assets/images/img8.jpg')"></div>
+            <div class="bento-item item-8"><img src="Assets/images/img9.jpg" alt="Sample Image 8" onclick="previewImage('Assets/images/img9.jpg')"></div>
         </div>
     </section>
      <section class="dark-section">
@@ -76,7 +94,9 @@
     
   </section>
   
- 
+  <div class="image-preview-container" onclick="this.style.display='none'">
+        <img class="image-preview" src="">
+    </div>
 
     
   
@@ -93,7 +113,15 @@
     </div>
   </footer>
 
+        <script>
+            function previewImage(imageSrc) {
+                const previewContainer = document.querySelector('.image-preview-container');
+                const previewImage = document.querySelector('.image-preview');
 
+                previewImage.src = imageSrc;
+                previewContainer.style.display = 'flex';
+            }
+        </script>
         <script src="Assets/js/script.js" async defer></script>
     </body>
 </html>
